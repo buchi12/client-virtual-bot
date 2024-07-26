@@ -1,38 +1,124 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+.chat-window {
+  width: 100%;
+  max-width: 600px;
+  height: calc(100% - 60px);
+  margin: 20px auto;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+
+  padding: 10px;
+  background-color: #f9f9f9;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.bot {
+  text-align: left;
   color: white;
+  background-color:  #e57742;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 5px 0;
+  display: inline-block;
+  max-width: 80%;
+  align-self: flex-start;
 }
 
-.App-link {
-  color: #61dafb;
+.user {
+  text-align: right;
+  color: black bold;
+  background-color: #cbd2d9;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 5px 0;
+  display: inline-block;
+  max-width: 80%;
+  align-self: flex-end;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+input[type="text"] {
+  width: calc(100% - 22px);
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: #e57742;
+  color: #fff;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+button:hover {
+  background-color: #357ab8;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.typing {
+  text-align: left;
+  color: rgb(25, 25, 25);
+  font-style: italic;
+  margin: 5px 0;
+}
+
+.fixed-form {
+  width: 100%;
+  max-width: 600px;
+ 
+  background-color: #fff;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+
+.head{
+  font-size:25px;
+}
+
+@media (max-width: 600px) {
+  .chat-window {
+    height: calc(100% - 50px);
   }
-  to {
-    transform: rotate(360deg);
+
+  .fixed-form {
+    padding: 5px;
   }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .chat-window {
+    height: calc(100% - 50px);
+  }
+}
+
+@media (min-width: 901px) {
+  .chat-window {
+    height: calc(100% - 60px);
+  }
+}
+
+.image {
+  width: 150px;
 }
